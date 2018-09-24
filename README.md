@@ -6,11 +6,12 @@ JavaScript in the browser can be loaded in two ways, much like CSS.
 
 ```<script>
 alert("testing");
-</script>```
+</script>
+```
 
 Or by loading an external JavaScript file:
 
-```<script src="test.js"></script>```
+`<script src="test.js"></script>`
 
 ## Accessing elements on a web page
 
@@ -72,7 +73,9 @@ Now that you have had some experience with JavaScript in the browser, create a n
 
 Open a terminal window and paste in the following code:
 
-```git clone https://github.com/Code-Institute-Solutions/js-mathsgame-starter.git```
+```
+git clone https://github.com/Code-Institute-Solutions/js-mathsgame-starter.git
+```
 
 This will clone my maths game starter repository.
 
@@ -86,7 +89,9 @@ We made up this attribute ourselves, and we refer to it and set it in the JavaSc
 
 You'll also notice that when the form is submitted, it runs:
 
-```checkAnswer(); return false;```
+```
+checkAnswer(); return false;
+```
 
 The reason it does return false; is to stop the form from refreshing when it has been submitted. Otherwise it refreshes the page, and our score resets to zero.
 
