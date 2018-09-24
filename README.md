@@ -4,7 +4,8 @@ Thursday, we looked at JavaScript in the browser.
 
 JavaScript in the browser can be loaded in two ways, much like CSS.
 
-```<script>
+```
+<script>
 alert("testing");
 </script>
 ```
