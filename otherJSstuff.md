@@ -148,7 +148,7 @@ let myObject = {
     "job":  "Lecturer",
     "location": "Classroom",
     "who": function() {
-        return `${name} is a ${job} in the ${location}`;
+        return `${this.name} is a ${this.job} in the ${this.location}`;
     }
 };
 ```
