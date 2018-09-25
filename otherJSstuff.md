@@ -114,3 +114,81 @@ Always do your defensive checks before you start doing something with the variab
 **CHALLENGE**:
 Add more defensive code to the fToC and convertTemp functions that you wrote earlier.
 
+## JavaScript Objects
+
+We talked about how everything in JavaScript is an object, but we can also create our own.
+
+An empty object in JavaScript looks like this:
+
+```JavaScript
+let myObject = {};
+```
+
+Properties in objects are stored as key/value pairs, like so:
+
+```JavaScript
+let myObject = {
+    "name": "Matt",
+    "job":  "Lecturer",
+    "location": "Classroom"
+};
+```
+
+Each key/value is separated by a comma. We can then call the properties of this, like so:
+
+```JavaScript
+myObject.name;
+```
+
+We can add methods (functions) to our object like this:
+
+```JavaScript
+let myObject = {
+    "name": "Matt",
+    "job":  "Lecturer",
+    "location": "Classroom",
+    "who": function() {
+        return `${name} is a ${job} in the ${location}`;
+    }
+};
+```
+
+Now try running:
+
+```JavaScript
+myObject.who();
+```
+
+We can also extend existing objects using the `prototype` keyword. This allows us to even extend the built-in JavaScript objects.
+
+For example, here is some code to add a rot13() method to the JavaScript String object. To read more about the simple ROT13 encryption cipher, [click here.](https://en.wikipedia.org/wiki/ROT13)
+
+```JavaScript
+String.prototype.rot13 = function() {
+  let initial = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+  let returnString = "";
+
+  for (let i = 0; i < this.length; i++) {
+    if (initial.indexOf(this[i]) == -1) {
+      returnString += this[i];
+    } else {
+      indexPosition = initial.indexOf(this[i]);
+      returnString += rot13[indexPosition];
+    }
+  }
+  return returnString;
+}
+```
+
+If you run this in repl.it (make sure that you create a new REPL with the language of JavaScript - not node.js), then whenever you create a new string, it will have the rot13() method attached.
+
+For example:
+
+```JavaScript
+let myString = "Cormac and Neal";
+myString.rot13();
+```
+
+This will return `Pbeznp naq Arny`, which is our original string rotated by 13 characters.
